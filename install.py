@@ -72,7 +72,7 @@ def is_installed(package_name):
 def prepare(rType="MAIN"):
     global rPackages
     if rType != "MAIN":
-        rPackages = rPackages[:-1]
+        rPackages = [p for p in rPackages if p != "mariadb-server"]
 
     os.system("ufw disable > /dev/null 2>&1")
     os.system("systemctl stop ufw > /dev/null 2>&1")
