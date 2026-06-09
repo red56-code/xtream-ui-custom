@@ -12,7 +12,7 @@ From masoudgb:
 Everything else is original from emre:
 - nginx + nginx_rtmp (1.27.0 + OpenSSL 3.3.x)
 - ffmpeg + ffprobe
-- Admin panel files
+- Admin panel files (release_22f)
 - database.sql
 - php-fpm pool configs
 
