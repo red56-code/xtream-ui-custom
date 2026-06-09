@@ -2,6 +2,20 @@
 
 Based on masoudgb installer with emre original files.
 
+## What is different from masoudgb
+
+From masoudgb:
+- nginx binary
+- PHP 7.3 binaries and extensions (php, php-fpm)
+- start_services.sh
+- nginx balance.conf
+
+Everything else is original from emre:
+- ffmpeg + ffprobe
+- Admin panel files
+- database.sql
+- php-fpm pool configs
+
 ## Install
 
 ```bash
@@ -16,5 +30,5 @@ rm -rf install.py && wget -qO install.py https://raw.githubusercontent.com/red56
 ## Notes
 
 - Automatically disables ufw
-- MariaDB buffer pool auto-configured based on available RAM
+- MariaDB buffer pool auto-configured based on available RAM (50%, min 1G, max 12G)
 - Reboot recommended after installation
