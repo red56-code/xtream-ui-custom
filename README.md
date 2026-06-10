@@ -18,7 +18,7 @@ Everything else is original from emre:
 
 ## Fixes vs masoudgb
 
-- PHP 7.4 (Znuff) - no libssl1.1 or libzip5 required
+- PHP 7.4 (Znuff) - no libssl1.1 or libzip5
 - release.py fixed for Python 3
 - Python 2.7 removed
 
