@@ -5,7 +5,7 @@ Based on masoudgb installer with emre original files.
 ## What is different from masoudgb
 
 From masoudgb:
-- PHP 7.3 binaries and extensions (php, php-fpm)
+- PHP 7.4 binaries and extensions (php, php-fpm)
 - start_services.sh
 - nginx balance.conf
 
