@@ -27,6 +27,13 @@ rm -rf install.py && wget -qO install.py https://raw.githubusercontent.com/red56
 - **MAIN** - Main server with admin panel
 - **LB** - Load balancer / sub server
 
+## Config Tool (re-encrypt database credentials)
+
+```bash
+python3 /home/xtreamcodes/iptv_xtream_codes/pytools/config.py DECRYPT
+python3 /home/xtreamcodes/iptv_xtream_codes/pytools/config.py ENCRYPT
+```
+
 ## Notes
 
 - Automatically disables ufw
