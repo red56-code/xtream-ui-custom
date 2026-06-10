@@ -48,6 +48,6 @@ python3 /home/xtreamcodes/iptv_xtream_codes/pytools/config.py ENCRYPT
 
 ## Notes
 
-- Automatically disables ufw
+- UFW: if active, installer asks to disable or allow required ports only
 - MariaDB buffer pool auto-configured based on available RAM (50%, min 1G, max 12G)
 - Reboot recommended after installation
