@@ -115,22 +115,6 @@ def prepare(rType="MAIN"):
 
     subprocess.run("sudo apt-get install -f -y > /dev/null 2>&1", shell=True)
 
-    python_installed = is_installed("python2.7")
-    pip_installed = subprocess.run("pip2.7 --version > /dev/null 2>&1", shell=True).returncode == 0
-    paramiko_installed = subprocess.run("pip2.7 show paramiko > /dev/null 2>&1", shell=True).returncode == 0
-
-    if not python_installed or not pip_installed or not paramiko_installed:
-        printc("Installing python2 & pip2 & paramiko...")
-        subprocess.run("sudo apt install -y build-essential checkinstall libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev curl tar > /dev/null 2>&1", shell=True)
-
-        if not python_installed:
-            subprocess.run("cd /usr/src && sudo curl -L -O https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tgz > /dev/null 2>&1 && sudo tar xzf Python-2.7.18.tgz > /dev/null 2>&1 && cd Python-2.7.18 && sudo ./configure --enable-optimizations > /dev/null 2>&1 && sudo make altinstall > /dev/null 2>&1", shell=True)
-
-        if not pip_installed:
-            subprocess.run("curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py > /dev/null 2>&1 && sudo python2.7 get-pip.py > /dev/null 2>&1", shell=True)
-
-        if not paramiko_installed:
-            subprocess.run("pip2.7 install paramiko > /dev/null 2>&1", shell=True)
 
     subprocess.run("apt-get install -f -y > /dev/null 2>&1", shell=True)
 
