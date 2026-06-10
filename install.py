@@ -74,10 +74,31 @@ def prepare(rType="MAIN"):
     if rType != "MAIN":
         rPackages = [p for p in rPackages if p != "mariadb-server"]
 
-    os.system("ufw disable > /dev/null 2>&1")
-    os.system("systemctl stop ufw > /dev/null 2>&1")
-    os.system("systemctl disable ufw > /dev/null 2>&1")
-    os.system("systemctl mask ufw > /dev/null 2>&1")
+    # UFW handling
+    ufw_active = os.system("ufw status 2>/dev/null | grep -q 'Status: active'") == 0
+    if ufw_active:
+        printc("UFW Firewall detected active!", col.BRIGHT_YELLOW)
+        printc("[1] Disable UFW (recommended for performance)", col.WHITE)
+        printc("[2] Allow required ports only (22, 80, 443, 25461, 25462, 25463, 25500, 7999, 31210)", col.WHITE)
+        rUFW = input("  Choice [1/2] (default: 1): ").strip() or "1"
+        if rUFW == "2":
+            for port in ["22", "80", "443", "25461", "25462", "25463", "31210"]:
+                os.system("ufw allow %s > /dev/null 2>&1" % port)
+            if rType.upper() == "MAIN":
+                os.system("ufw allow 25500 > /dev/null 2>&1")
+                os.system("ufw allow 7999 > /dev/null 2>&1")
+            printc("UFW: required ports allowed", col.GREEN)
+        else:
+            os.system("ufw disable > /dev/null 2>&1")
+            os.system("systemctl stop ufw > /dev/null 2>&1")
+            os.system("systemctl disable ufw > /dev/null 2>&1")
+            os.system("systemctl mask ufw > /dev/null 2>&1")
+            printc("UFW: disabled", col.GREEN)
+    else:
+        os.system("ufw disable > /dev/null 2>&1")
+        os.system("systemctl stop ufw > /dev/null 2>&1")
+        os.system("systemctl disable ufw > /dev/null 2>&1")
+        os.system("systemctl mask ufw > /dev/null 2>&1")
     printc("Preparing Installation")
 
     if os.path.isfile('/home/xtreamcodes/iptv_xtream_codes/config'):
