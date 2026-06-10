@@ -16,6 +16,12 @@ Everything else is original from emre:
 - database.sql
 - php-fpm pool configs
 
+## Fixes vs masoudgb
+
+- PHP 7.4 (Znuff) - no libssl1.1 or libzip5 required
+- release.py fixed for Python 3
+- Python 2.7 removed
+
 ## Install
 
 ```bash
@@ -26,6 +32,12 @@ rm -rf install.py && wget -qO install.py https://raw.githubusercontent.com/red56
 
 - **MAIN** - Main server with admin panel
 - **LB** - Load balancer / sub server
+
+## Start / Restart Services
+
+```bash
+/home/xtreamcodes/iptv_xtream_codes/start_services.sh
+```
 
 ## Config Tool (re-encrypt database credentials)
 
