@@ -5,11 +5,11 @@ Based on masoudgb installer with emre original files.
 ## What is different from masoudgb
 
 From masoudgb:
-- PHP 7.4 binaries and extensions (php, php-fpm)
 - start_services.sh
 - nginx balance.conf
 
 Everything else is original from emre:
+- PHP 7.4 binaries and extensions (php, php-fpm) - compiled by Znuff
 - nginx + nginx_rtmp (1.27.0 + OpenSSL 3.3.x)
 - ffmpeg + ffprobe
 - Admin panel files (release_22f)
