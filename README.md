@@ -9,7 +9,7 @@ From masoudgb:
 - nginx balance.conf
 
 Everything else is original from emre:
-- PHP 7.4 binaries and extensions (php, php-fpm) - compiled by Znuff
+- PHP 7.4.33 binaries and extensions (php, php-fpm) - compiled by Znuff (CVE patches, Oct 2026)
 - nginx + nginx_rtmp (1.27.0 + OpenSSL 3.3.x)
 - ffmpeg + ffprobe
 - Admin panel files (release_22f)
@@ -18,7 +18,7 @@ Everything else is original from emre:
 
 ## Fixes vs masoudgb
 
-- PHP 7.4 (Znuff) - no libssl1.1 or libzip5
+- PHP 7.4.33 (Znuff) - no libssl1.1 or libzip5
 - release.py fixed for Python 3
 - Python 2.7 removed
 
